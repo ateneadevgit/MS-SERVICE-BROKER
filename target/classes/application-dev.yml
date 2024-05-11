@@ -1,0 +1,103 @@
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+
+broker-routes:
+  private: /private
+  public: /public
+  domain: localhost
+
+ms-security:
+  port: 8011
+  complete-path: http://${broker-routes.domain}:${ms-security.port}
+  security:
+    path: /api/v1/security
+
+ms-authorizer:
+  port: 8013
+  complete-path: http://${broker-routes.domain}:${ms-authorizer.port}
+  authorizer:
+    path: /api/v1/authorizer
+
+ms-catalogs:
+  port: 8014
+  complete-path: http://${broker-routes.domain}:${ms-catalogs.port}
+  catalogs:
+    path: /api/v1/catalog
+  catalog-item:
+    path: /api/v1/catalog-item
+  catalog-type:
+    path: /api/v1/catalog-type
+
+ms-program:
+  port: 8016
+  complete-path: http://${broker-routes.domain}:${ms-program.port}
+  programs:
+    path: /api/v1/program
+  trace:
+    path: /api/v1/traceability
+
+ms-event:
+  port: 8022
+  complete-path: http://${broker-routes.domain}:${ms-event.port}
+  event:
+    path: /api/v1/event
+
+ms-document:
+  port: 8012
+  complete-path: http://${broker-routes.domain}:${ms-document.port}
+  document:
+    path: /api/v1/document-manager
+
+ms-workflow:
+  port: 8017
+  complete-path: http://${broker-routes.domain}:${ms-workflow.port}
+  workflow:
+    path: /api/v1/workflow
+
+ms-login:
+  port: 8018
+  complete-path: http://${broker-routes.domain}:${ms-login.port}
+  login:
+    path: /api/v1/login
+
+ms-safety-mesh:
+  port: 8019
+  complete-path: http://${broker-routes.domain}:${ms-safety-mesh.port}
+  module:
+    path: /api/v1/module
+  permission:
+    path: /api/v1/permission
+  role:
+    path: /api/v1/role
+  column:
+    path: /api/v1/column
+
+ms-settings:
+  port: 8010
+  path: /api/v1/settings
+  complete-path: http://${broker-routes.domain}:${ms-settings.port}
+
+ms-sinu:
+  port: 8021
+  path: /api/v1/sinu
+  complete-path: http://${broker-routes.domain}:${ms-sinu.port}
+
+ms-news:
+  port: 8023
+  path: /api/v1/news
+  complete-path: http://${broker-routes.domain}:${ms-news.port}
+
+ms-eportafolio:
+  port: 8025
+  path: /api/v1/eportafolio
+  complete-path: http://${broker-routes.domain}:${ms-eportafolio.port}
+
+ms-notification:
+  port: 8020
+  complete-path: http://${broker-routes.domain}:${ms-notification.port}
+  notification:
+    path: /api/v1/notification
+  template:
+    path: /api/v1/template
